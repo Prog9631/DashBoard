@@ -23,5 +23,5 @@ for r in range (cell0[0]+1,worksheet.nrows):
     cell.append(v.value)
 
 print(cell)
-desired_cell[1]=rsf.find_val("PAC 18","OP stock",file,sheet)
+desired_cell=rsf.find_val("PAC 18","OP stock",file,sheet)
 ##print("value:",desired_cell[2])

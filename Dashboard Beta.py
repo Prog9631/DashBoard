@@ -17,6 +17,7 @@ import reading_excel_sheet as res
 
 
 
+
 def Act1():
         master = Tk()
         frame1= Frame(master, highlightbackground="red", highlightcolor="green", highlightthickness=10, width=400, height = 50, bd= 0)
@@ -31,6 +32,7 @@ def Act1():
         L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column']))
         L2e=Label(frame1, text="43523")
         L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
+
 
 
         L3=Label(frame1, text="Today")
@@ -56,9 +58,9 @@ master1=Tk()
 
 Heading=Label(frame1, text="Product Name")
 Heading.grid(row=1, column=o)
-for (i=1; i<int(max_row); i++){
+for (1, i<int(max_row))
         b1 = Button(master1, text=res.desired_cell.value, command=None)
-        b1.grid(row=0, column=i)}
+        b1.grid(row=0, column=i)
 
 b2 = Button(master1, text="PAC-100S", command=Act1)
 b2.grid(row=0, column=1)

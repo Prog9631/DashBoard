@@ -9,7 +9,6 @@ worksheet = workbook.sheet_by_name('Sheet3')
 save1 = []
 save2 = []
 cord = []
-
 Input1 = "PAC 18"
 Input2 = "OP stock"
 for r in range (0,worksheet.nrows):

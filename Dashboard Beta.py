@@ -55,15 +55,16 @@ def Act1():
 
 
 master1=Tk()
+frame2= Frame(master1, highlightbackground="green", highlightcolor="green", highlightthickness=10, width=400, height = 50, bd= 0)
+frame2.pack()
+Heading=Label(frame2, text="DASHBOARD")
+Heading.grid(row=1, column=1)
+for i in range(1, res.worksheet.nrows):
+        b1 = Button(frame2, text=res.cell[i], command=Act1)
+        b1.grid(row=2, column=i)
 
-Heading=Label(frame1, text="Product Name")
-Heading.grid(row=1, column=o)
-for (1, i<int(max_row))
-        b1 = Button(master1, text=res.desired_cell.value, command=None)
-        b1.grid(row=0, column=i)
+        aaojdbvcbsdvubeu
 
-b2 = Button(master1, text="PAC-100S", command=Act1)
-b2.grid(row=0, column=1)
 
 
 #seperator=Frame(height=2, bd=1, relief=SUNKEN)

@@ -9,15 +9,18 @@ worksheet = workbook.sheet_by_name('Sheet3')
 save1 = []
 save2 = []
 cord = []
+
+Input1 = "PAC 18"
+Input2 = "OP stock"
 for r in range (0,worksheet.nrows):
     for c in range(0,worksheet.ncols):
         column = worksheet.col_values(c)
         v = worksheet.cell(r,c)
       #  print(v.value)
-        if(v.value=="PAC 18"):
+        if(v.value==Input1):
             save1.append(r)
             save1.append(c)
-        if(v.value=="OP stock"):
+        if(v.value==Input1):
             save2.append(r)
             save2.append(c)
 

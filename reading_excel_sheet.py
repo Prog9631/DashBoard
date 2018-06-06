@@ -15,13 +15,11 @@ sheet = 'Sheet3'
 ##    cord.append(save1[1])
 workbook = xl.open_workbook(file)
 worksheet = workbook.sheet_by_name(sheet)
-cell=[]        
+rownum=[]        
 cell0=rsf.find_cell(file,sheet,"Products")
 
 for r in range (cell0[0]+1,worksheet.nrows):
     v = worksheet.cell(r,cell0[1])
-    cell.append(v.value)
-
-print(cell)
-desired_cell=rsf.find_val("PAC 18","OP stock",file,sheet)
+    rownum.append(v.value)
+        
 ##print("value:",desired_cell[2])

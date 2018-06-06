@@ -16,20 +16,21 @@ import reading_excel_sheet as res
         print(Stock) '''
 
 
-
+Prouduct_name = res.Input1
+Parameter_name = res.Input2
 
 master = Tk()
 frame1= Frame(master, highlightbackground="red", highlightcolor="green", highlightthickness=10, width=400, height = 50, bd= 0)
 frame1.pack()
 L1=Label(frame1, text="Product Name")
 L1.grid(row=0, column=3)
-L1e=Label(frame1, text=res.desired_cell.value)
+L1e=Label(frame1, text=Prouduct_name)
 L1e.grid(row=int(L1.grid_info()['row'])+ 1  , column=int(L1.grid_info()['column']))
 
 
 L2=Label(frame1, text="Opening Stock")
 L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column']))
-L2e=Label(frame1, text="43523")
+L2e=Label(frame1, text=Parameter_name)
 L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
 
 

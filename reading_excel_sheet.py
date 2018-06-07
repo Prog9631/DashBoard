@@ -13,10 +13,10 @@ worksheet = workbook.sheet_by_name(sheet)
 rowval=[]        
 cell0=rsf.find_cell(file,sheet,"Products")
 
-for r in range (cell0[0]+1,worksheet.nrows):
+for r in range(cell0[0]+1,worksheet.nrows):
     v = worksheet.cell(r,cell0[1])
     rowval.append(v.value)
         
 ##print(rowval)
 
-print(rsf.find_val('PAC 18','OP stock','data_sheet.xlsx','Sheet3'))
+print(rsf.find_val('data_sheet.xlsx','Sheet3','PAC 18/5','Prodcution','today'))

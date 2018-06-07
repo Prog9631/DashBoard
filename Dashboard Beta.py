@@ -5,7 +5,7 @@ import array as arr
 
 
 import reading_excel_sheet as res
-
+import readsheet_functions as rsf
 '''def show_entry_fields():
         wb = openpyxl.load_workbook('example.xlsx')
         sheet = wb.active
@@ -23,17 +23,15 @@ def Act1(i):
         
         master = Tk()
         frame1= Frame(master, highlightbackground="red", highlightcolor="green", highlightthickness=10, width=400, height = 50, bd= 0)
-        frame1.pack()
+        frame1.grid()
         
-        L1=Label(master, text=i.cget('text'))
+        L1=Label(frame1, text=i.cget('text'))
         L1.grid(row=0, column=3)
-        L1e=Label(frame1, text='parag')
-        L1e.grid(row=int(L1.grid_info()['row'])+ 1  , column=int(L1.grid_info()['column']))
-
+ 
 
         L2=Label(frame1, text="Opening Stock")
         L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column']))
-        L2e=Label(frame1, text="43523")
+        L2e=Label(frame1, text=rsf.find_val(str(i.cget('text')), 'OP stock','data_sheet.xlsx', 'Sheet3'))
         L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
 
 

@@ -31,7 +31,7 @@ def Act1(i):
 
         L2=Label(frame1, text="Opening Stock")
         L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column']))
-        L2e=Label(frame1, text=rsf.find_val(str(i.cget('text')), 'OP stock','data_sheet.xlsx', 'Sheet3'))
+        L2e=Label(frame1, text=rsf.find_val('data_sheet.xlsx', 'Sheet3',str(i.cget('text')),'Prodcution', 'OP stock'))
         L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
 
 

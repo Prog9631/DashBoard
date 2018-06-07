@@ -17,4 +17,6 @@ for r in range (cell0[0]+1,worksheet.nrows):
     v = worksheet.cell(r,cell0[1])
     rowval.append(v.value)
         
-print(rowval)
+##print(rowval)
+
+print(rsf.find_val('PAC 18','OP stock','data_sheet.xlsx','Sheet3'))

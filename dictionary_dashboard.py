@@ -9,9 +9,5 @@ find_val(product,parameter,file_name,sheet_name)
 ##function to find and return value of a cell corresponding to given
 ##parameter of a given product
 
-find_val(product,parameter,file_name,sheet_name)
-##function to find and return value of a cell corresponding to given
-##parameter of a given product
-
 rowval
 #array carrying value of a column titled products

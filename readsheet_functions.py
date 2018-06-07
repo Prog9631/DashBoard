@@ -25,7 +25,10 @@ def find_cell(file_name,sheet_name,string):
 def find_val(product,parameter,file_name,sheet_name):
     cpro = find_cell(file_name,sheet_name,product)
     cpar = find_cell(file_name,sheet_name,parameter)
+    workbook = xl.open_workbook(file_name)
+    worksheet = workbook.sheet_by_name(sheet_name)
     a = []
     a.append(cpro[0])
     a.append(cpar[1])
-    return a
+    aval = worksheet.cell(a[0],a[1]).value
+    return aval

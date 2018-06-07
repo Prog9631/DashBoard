@@ -12,8 +12,10 @@ def find_cell(file_name,sheet_name,string,i=0,j=0):
         for c in range(j,worksheet.ncols):
             column = worksheet.col_values(c)
             v = worksheet.cell(r,c)
+##            print(v)
             if(v.value==string):
                 temp =1
+##                print(v)
                 save1.append(r)
                 save1.append(c)
     if temp == 0:
@@ -22,9 +24,9 @@ def find_cell(file_name,sheet_name,string,i=0,j=0):
     else:
         return save1
 
-def find_val(file_name,sheet_name,product,parameter2,parameter1='NULL'):
+def find_val(file_name,sheet_name,product,parameter1,parameter2='NULL'):
     cpro = find_cell(file_name,sheet_name,product)
-    if (parameter1!='NULL'):
+    if (parameter1!='void'):
         cpar1 = find_cell(file_name,sheet_name,parameter1)
     else:
         cpar1 = [0,0]

@@ -26,7 +26,7 @@ def find_cell(file_name,sheet_name,string,i=0,j=0):
 
 def find_val(file_name,sheet_name,product,parameter1,parameter2='NULL'):
     cpro = find_cell(file_name,sheet_name,product)
-    if (parameter1!='void'):
+    if (parameter1!='NULL'):
         cpar1 = find_cell(file_name,sheet_name,parameter1)
     else:
         cpar1 = [0,0]

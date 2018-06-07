@@ -1,6 +1,7 @@
 from tkinter import Frame, Entry, Tk, Label, Button
 import openpyxl
 import xlrd as xl
+import array as arr
 
 
 import reading_excel_sheet as res
@@ -18,13 +19,15 @@ import reading_excel_sheet as res
 
 
 
-def Act1():
+def Act1(i):
+        
         master = Tk()
         frame1= Frame(master, highlightbackground="red", highlightcolor="green", highlightthickness=10, width=400, height = 50, bd= 0)
         frame1.pack()
-        L1=Label(frame1, text="Product Name")
+        
+        L1=Label(master, text=i.cget('text'))
         L1.grid(row=0, column=3)
-        L1e=Label(frame1, text=res.desired_cell.value)
+        L1e=Label(frame1, text='parag')
         L1e.grid(row=int(L1.grid_info()['row'])+ 1  , column=int(L1.grid_info()['column']))
 
 
@@ -55,15 +58,27 @@ def Act1():
 
 
 master1=Tk()
+frame2= Frame(master1, highlightbackground="green", highlightcolor="green", highlightthickness=10, width=400, height = 50, bd= 0)
+frame2.pack()
+Heading=Label(frame2, text="DASHBOARD")
+Heading.grid(row=1, column=1)
 
-Heading=Label(frame1, text="Product Name")
-Heading.grid(row=1, column=o)
-for (1, i<int(max_row))
-        b1 = Button(master1, text=res.desired_cell.value, command=None)
-        b1.grid(row=0, column=i)
+arr = []
 
-b2 = Button(master1, text="PAC-100S", command=Act1)
-b2.grid(row=0, column=1)
+def tst(k):
+        print(k.cget('text'))
+
+for i in range(1, res.worksheet.nrows - 1):
+        button=Button(frame2, text=res.rowval[i])
+        button.grid(row=2, column=i)
+        button.configure(command= lambda k=button: Act1(k))
+        button.grid(row=2, column=i)
+        arr.append(res.rowval[i])
+
+
+
+
+
 
 
 #seperator=Frame(height=2, bd=1, relief=SUNKEN)

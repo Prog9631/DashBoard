@@ -19,4 +19,4 @@ for r in range(cell0[0]+1,worksheet.nrows):
         
 ##print(rowval)
 
-print(rsf.find_val('data_sheet.xlsx','Sheet3','PAC 18/5','Prodcution','today'))
+print(rsf.find_val('data_sheet.xlsx','Sheet3','PAC -100S','Dispatch/Sales','to month'))

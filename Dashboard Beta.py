@@ -38,39 +38,39 @@ def Act1(i):
 
         L3=Label(frame1, text="Today")
         L3.grid(row=int(L1.grid_info()['row'])+ 4  , column=int(L1.grid_info()['column']) - 2)
-        L3e=Label(frame1, text="2465")
+        L3e=Label(frame1, text=rsf.find_val(str(i.cget('text')), 'today','data_sheet.xlsx', 'Sheet3'))
         L3e.grid(row=int(L1.grid_info()['row'])+ 5  , column=int(L1.grid_info()['column']) -2)
 
 
         L4=Label(frame1, text="To Month")
         L4.grid(row=int(L1.grid_info()['row'])+ 4  , column=int(L1.grid_info()['column']))
-        L4e=Label(frame1, text="6845")
+        L4e=Label(frame1, text=rsf.find_val(str(i.cget('text')), 'to month','data_sheet.xlsx', 'Sheet3'))
         L4e.grid(row=int(L1.grid_info()['row'])+ 5 , column=int(L1.grid_info()['column']))
 
 
         L5=Label(frame1, text="To Date")
         L5.grid(row=int(L1.grid_info()['row'])+ 4  , column=int(L1.grid_info()['column']) +2)
-        L5e=Label(frame1, text="45765")
+        L5e=Label(frame1, text=rsf.find_val(str(i.cget('text')), 'to date','data_sheet.xlsx', 'Sheet3'))
         L5e.grid(row=int(L1.grid_info()['row'])+ 5 , column=int(L1.grid_info()['column']) + 2)
 
 
 
 master1=Tk()
-frame2= Frame(master1, highlightbackground="green", highlightcolor="green", highlightthickness=10, width=400, height = 50, bd= 0)
+master1.geometry("{0}x{1}+0+0".format(master1.winfo_screenwidth(), master1.winfo_screenheight()))
+frame2= Frame(master1, highlightbackground="green", highlightcolor="green", highlightthickness=5, bd= 0)
 frame2.pack()
-Heading=Label(frame2, text="DASHBOARD")
-Heading.grid(row=1, column=1)
+Heading=Label(frame2, text="DASHBOARD", font=("Courier", 44))
+Heading.grid(row=0, columnspan=3)
+       
 
 arr = []
 
-def tst(k):
-        print(k.cget('text'))
 
 for i in range(1, res.worksheet.nrows - 1):
-        button=Button(frame2, text=res.rowval[i])
-        button.grid(row=2, column=i)
+        button=Button(frame2, text=res.rowval[i], bg="red", fg="white", width=10)
+        button.grid(row=2, column=i-1)
         button.configure(command= lambda k=button: Act1(k))
-        button.grid(row=2, column=i)
+        
         arr.append(res.rowval[i])
 
 

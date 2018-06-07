@@ -1,4 +1,4 @@
-from tkinter import Frame, Entry, Tk, Label, Button
+from tkinter import Frame, Entry, Tk, Label, Button, ttk, HORIZONTAL, RAISED, SUNKEN
 import openpyxl
 import xlrd as xl
 import array as arr
@@ -56,12 +56,13 @@ def Act1(i):
 
 
 master1=Tk()
-master1.geometry("{0}x{1}+0+0".format(master1.winfo_screenwidth(), master1.winfo_screenheight()))
+#master1.geometry("{0}x{1}+0+0".format(master1.winfo_screenwidth(), master1.winfo_screenheight()))
 frame2= Frame(master1, highlightbackground="green", highlightcolor="green", highlightthickness=5, bd= 0)
-frame2.pack()
+frame2.grid(row=0, column=0)
 Heading=Label(frame2, text="DASHBOARD", font=("Courier", 44))
 Heading.grid(row=0, columnspan=3)
        
+ttk.Separator(frame2, orient = HORIZONTAL).grid(row=1, columnspan=5, sticky ="ew")
 
 arr = []
 

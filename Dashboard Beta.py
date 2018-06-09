@@ -75,7 +75,7 @@ for i in range(1, res.worksheet.nrows - 1):
         button.configure(command= lambda k=button: Act1(k))
         
         arr.append(res.rowval[i])
-
+#Just for the changes
 
 
 

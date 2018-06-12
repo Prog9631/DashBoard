@@ -27,6 +27,6 @@ for r in range(cell0[0]+1,worksheet.nrows):
 ##cpar1 = rsf.find_cell(file,sheet,'UOM')
 ##print(cpar1)
 for i in range(len(PAC.Parameter1S)):
-    print(rsf.find_val('data_sheet.xlsx','Sheet3','PAC 18',PAC.Parameter1S[i]))
+    print(rsf.find_val('data_sheet.xlsx','Sheet3','PAC 1000S',PAC.Parameter1S[i]))
 
 ##print(correctness_ratio)

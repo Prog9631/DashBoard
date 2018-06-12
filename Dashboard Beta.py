@@ -8,9 +8,6 @@ import time
 from time import gmtime, strftime
 
 
-DayDate =  print(strftime("%A, %d %b %Y  +0000", gmtime()))
-print(strftime("%H:%M:%S"))
-
 
 import reading_excel_sheet as res
 import readsheet_functions as rsf
@@ -89,9 +86,9 @@ clock.grid(row=2, column=20)
 
 def tick():
     global time1
-    # get the current local time from the PC
+   
     time2 = time.strftime('%a, %H:%M:%S')
-    # if time string has changed, update it
+  
     if time2 != time1:
         time1 = time2
         clock.config(text=time2)

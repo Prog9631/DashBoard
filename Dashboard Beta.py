@@ -1,22 +1,16 @@
-from tkinter import Frame, Entry, Tk, Label, Button, ttk, HORIZONTAL, RAISED, SUNKEN
+from tkinter import Frame, Entry, Tk, Label, Button, ttk, HORIZONTAL, RAISED, SUNKEN, S, W, E, N
 import openpyxl
 import xlrd as xl
 import array as arr
+import Dictionery as dic
+from datetime import datetime
+import time
+from time import gmtime, strftime
+
 
 
 import reading_excel_sheet as res
 import readsheet_functions as rsf
-'''def show_entry_fields():
-        wb = openpyxl.load_workbook('example.xlsx')
-        sheet = wb.active
-        sheet['A1']=e1
-        sheet['B1']=e2
-        wb.save('example.xlsx')
-        wb = openpyxl.load_workbook('example.xlsx')
-        Stock = sheet['B1'].value
-        print(Stock) '''
-
-
 
 
 def Act1(i):
@@ -34,7 +28,7 @@ def Act1(i):
         L2e=Label(frame1, text=rsf.find_val('data_sheet.xlsx','Sheet3', str(i.cget('text')), 'OP stock'))
         L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
 
-        #L6=Label(frame1, text="")
+      
 
         L3=Label(frame1,text="Today")
         L3.grid(row=int(L1.grid_info()['row'])+ 4  , column=int(L1.grid_info()['column']) - 2)
@@ -58,11 +52,51 @@ def Act1(i):
 
 
 master1=Tk()
-#master1.geometry("{0}x{1}+0+0".format(master1.winfo_screenwidth(), master1.winfo_screenheight()))
+master1.title("DashBoard")
+master1.grid_columnconfigure(0,weight=1)
+
+
+
+
+
 frame2= Frame(master1, highlightbackground="green", highlightcolor="green", highlightthickness=2, bd= 0)
+frame2.grid_columnconfigure(0,weight=1)
+frame2.grid_rowconfigure(0, weight=1)
+frame2.grid_columnconfigure(0, weight=1)
 frame2.grid(row=0, column=0)
 Heading=Label(frame2, text="DASHBOARD", font=("Courier", 44))
 Heading.grid(row=0, columnspan=3)
+
+
+#### DATE
+Date = Label(frame2, font=('Courier', 15), bg='grey', text = strftime("%d %b %Y", gmtime()))
+Date.grid(row=0, column = 20, sticky = N)
+
+Day = Label(frame2, font=('Courier', 15), bg='grey', text = strftime("%A", gmtime()))
+Day.grid(row=0, column=20)
+
+
+
+#### DATE
+
+#### CLOCK
+time1 = ''
+clock = Label(frame2, font=('Courier', 15), bg='grey')
+clock.grid(row=2, column=20)
+
+def tick():
+    global time1
+   
+    time2 = time.strftime('%a, %H:%M:%S')
+  
+    if time2 != time1:
+        time1 = time2
+        clock.config(text=time2)
+
+    clock.after(200, tick)
+tick()
+
+#### CLOCK
        
 ttk.Separator(frame2, orient = HORIZONTAL).grid(row=1, columnspan=5, sticky ="ew")
 
@@ -75,19 +109,8 @@ for i in range(1, res.worksheet.nrows - 1):
         button.configure(command= lambda k=button: Act1(k))
         
         arr.append(res.rowval[i])
-#Just for the changes
-
-
-
-
-
-
-#seperator=Frame(height=2, bd=1, relief=SUNKEN)
-#seperator.pack(fill=X, padx=5, pady=5)
-
-
-#Button(master, text='Quit', command=master.quit).grid(row=3, column=0, sticky=W, pady=4)
-#Button(master, text='Show', command=show_entry_fields).grid(row=3, column=1, sticky=W, pady=4)
+        
+master1.resizable(False, False)
 
 master1.mainloop()
 

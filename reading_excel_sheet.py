@@ -7,8 +7,8 @@ import parameter_dictionary_PAC as PAC
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
-file = 'data_sheet.xlsx'
-sheet = 'Sheet3'
+file = 'Dr-June-18.xlsx'
+sheet = '12.06.02018'
 
 #------------------------------------------------
 
@@ -26,7 +26,6 @@ for r in range(cell0[0]+1,worksheet.nrows):
 ##
 ##cpar1 = rsf.find_cell(file,sheet,'UOM')
 ##print(cpar1)
-for i in range(len(PAC.Parameter1S)):
-    print(rsf.find_val('data_sheet.xlsx','Sheet3','PAC 1000S',PAC.Parameter1S[i]))
-
+##for i in range(len(PAC.Parameter1S)):
+print(rsf.find_val(file,sheet,'Stock at Plant','GRADES','A1/62'))
 ##print(correctness_ratio)

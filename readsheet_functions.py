@@ -47,11 +47,11 @@ def find_val(file_name,sheet_name,product,parameter1,parameter2='NULL'):
     a = []
     if (parameter2!='NULL'):
         cpar2 = find_cell(file_name,sheet_name,parameter2,cpar1[0],cpar1[1])
-        a.append(cpro[0])
-        a.append(cpar2[1])
+        a.append(max(cpro[0],cpar2[0]))
+        a.append(max(cpro[1],cpar2[1]))
     else:
-        a.append(cpro[0])
-        a.append(cpar1[1])
+        a.append(max(cpro[0],cpar1[0]))
+        a.append(max(cpro[1],cpar1[1]))
     aval = worksheet.cell(a[0],a[1]).value
     return aval
 

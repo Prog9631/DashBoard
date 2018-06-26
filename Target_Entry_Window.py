@@ -7,8 +7,8 @@ sheet = wb['Sheet1']
 
 DB.tick()
 #### Target Feed Butons
-def Target_button(frame2):
-    tgt_btn=Button(frame2, text="Feed target", bg="red", fg="white", width=10)
+def Target_button(frameT):
+    tgt_btn=Button(frameT, text="Feed target", bg="red", fg="white", width=10)
     tgt_btn.grid(row=1, column=20, sticky = N+S+W)
     tgt_btn.configure(command= lambda k=tgt_btn: TargetEntry())
 

@@ -14,7 +14,7 @@ file = 'Dr-June-18.xlsx'
 workbook = xl.open_workbook(file)
 names = workbook.sheet_names()
 sheet = names[0]
-
+x
 worksheet = workbook.sheet_by_name(sheet)
 rowval=[]        
 cell0=rsf.find_cell(file,sheet,"Products")

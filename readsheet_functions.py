@@ -61,14 +61,51 @@ def get_col(file_name,sheet_name,string,i=0,j=0):
     workbook = xl.open_workbook(file_name)
     worksheet = workbook.sheet_by_name(sheet_name)
     cpro = find_cell(file_name,sheet_name,string)
-    column = worksheet.col_values(cpro[1])
-    print(column)
-    lc = len(column)
-    while i<lc:
-        if (column[i]==None or isinstance(column[i],str)):
-            del column[i]
-            lc = len(column)
-            i = i-1
+
+    column = []
+    j = cpro[1]
+    i = cpro[0]
+    stringx =  worksheet.cell(i,j).value
+    
+    v=worksheet.cell(i+1,j).value
+    print(stringx)
+    print(v)
+
+    while (v == stringx or v==''):
         i=i+1
-    return column
+        v=worksheet.cell(i+1,j).value
+        print(i)
+ 
+    i=i+1
+    savi = i;
+    j2=0
+
+    r1 = worksheet.cell(i,j2).value
+    r2 = worksheet.cell(i+1,j2).value
+
+    while(not(isinstance(r1,str) and isinstance(r2,str))):
+        j2=j2+1
+        r1 = worksheet.cell(i,j2).value
+        r2 = worksheet.cell(i+1,j2).value
+
+    while (fuzz.ratio(r1,r2)>10 and v!='') :
+        i=i+1
+        r1 = worksheet.cell(i,j2).value
+        r2 = worksheet.cell(i+1,j2).value
+
+    for i2 in range(savi,i):
+        r1 = worksheet.cell(i2,j).value    
+        column.append(r1)
+        
+    return column        
+####    print(column)
+####    lc = len(column)
+####    column2 = []
+####    while i<lc:
+####        column2.append(column[i])
+####        if (column[i]==None or isinstance(column[i],str)):
+####            del column[i]
+####            lc = len(column)
+####            i = i-1
+####        i=i+1
     

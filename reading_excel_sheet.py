@@ -14,17 +14,19 @@ file = 'Dr-June-18.xlsx'
 workbook = xl.open_workbook(file)
 names = workbook.sheet_names()
 sheet = names[0]
-x
 worksheet = workbook.sheet_by_name(sheet)
-rowval=[]        
-cell0=rsf.find_cell(file,sheet,"Products")
+##rowval=[]        
+##cell0=rsf.find_cell(file,sheet,"Products")
+##
+##for r in range(cell0[0]+1,worksheet.nrows):
+##    v = worksheet.cell(r,cell0[1])
+##    rowval.append(v.value)
 
-for r in range(cell0[0]+1,worksheet.nrows):
-    v = worksheet.cell(r,cell0[1])
-    rowval.append(v.value)
+xxx = rsf.get_col(file,sheet,'Off spec material')
 
+print(xxx)
 
-        
+print(xxx[3])
 ##print(rowval)
 ##  (correctness_ratio = fuzz.ratio(, "xx")
 ##x
@@ -34,6 +36,5 @@ for r in range(cell0[0]+1,worksheet.nrows):
 ##print(rsf.find_cell(file,sheet,'PRODUCTION  (MT)'))
 ##print(rsf.find_cell(file,sheet,'S40000000066'))
 ##print(worksheet.cell(5,3).value)
-print(rsf.find_val(file,sheet,'OPENING BALANCE(MT)','S40000000066','A1/62'))
-
+##print(rsf.find_val(file,sheet,'OPENING BALANCE(MT)','S40000000066','A1/62'))
 ##print(correctness_ratio)

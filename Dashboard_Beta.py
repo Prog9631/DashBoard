@@ -70,17 +70,18 @@ def Act1(i):
                        
                 L1=Label(frame2, text=buttonCP.cget('text'))
                 L1.grid(row=0, column=3)
+                SAP_code = rsf.get_col('DR-june-18.xlsx', res.sheet, 'SAP code')
                 
-                for j in range(1, 7):
-                        L2=Label(frame2, text=dic.a[1])
-                        L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column']))
-                        L2e=Label(frame2, text=get_col('DR-june-18.xlsx', ref.sheet, 'SAP code')[i])
-                        L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
-                        for q in range(1, 7):
-                            L2=Label(frame2, text="Product Name")
-                            L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column']))
-                            L2e=Label(frame2, text=rsf.find_val('DR-june-18.xlsx', ref.sheet, dic.a[j], get_col('DR-june-18.xlsx', ref.sheet, 'SAP code')[i]) ))
-                            L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
+                for j in range(1,len(SAP_code) ):      #up down
+ #                       L2=Label(frame2, text=dic.a[j])
+ #                       L2.grid(row=int(L1.grid_info()['row'])+ 1 , column=int(L1.grid_info()['column']))
+                        L2e=Label(frame2, text=SAP_code[j])
+                        L2e.grid(row=int(L1.grid_info()['row'])+ j + 2 , column=int(L1.grid_info()['column']))
+                        for q in range(1, len(dic.a)):    #left right
+ #                           L2=Label(frame2, text=dic.a[q])
+ #                            L2.grid(row=int(L2e.grid_info()['row']) , column=int(L1.grid_info()['column']))
+                            L3e=Label(frame2, text=rsf.find_val('DR-june-18.xlsx', res.sheet, dic.a[q], SAP_code[i]) )
+                            L3e.grid(row=int(L2e.grid_info()['row']), column=int(L2e.grid_info()['column']) + q)
 
 
 #rsf.find_val('DR-june-18.xlsx','sheet_names(1)', 'OPENING BALANCE (MT)',  'S40000000066')

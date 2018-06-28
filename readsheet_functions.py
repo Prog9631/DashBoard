@@ -42,10 +42,8 @@ def find_val(file_name,sheet_name,product,parameter1,parameter2='NULL'):
     worksheet = workbook.sheet_by_name(sheet_name)
     
     cpro = find_cell(file_name,sheet_name,product)
-    cpar1 = find_cell(file_name,sheet_name,parameter1) 
-
-    print(cpro)
-    print(cpar1)
+    cpar1 = find_cell(file_name,sheet_name,parameter1)
+    
     a = []
     if (parameter2!='NULL'):
         cpar2 = find_cell(file_name,sheet_name,parameter2,cpar1[0],cpar1[1])

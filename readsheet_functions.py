@@ -68,13 +68,10 @@ def get_col(file_name,sheet_name,string,i=0,j=0):
     stringx =  worksheet.cell(i,j).value
     
     v=worksheet.cell(i+1,j).value
-    print(stringx)
-    print(v)
-
+ 
     while (v == stringx or v==''):
         i=i+1
         v=worksheet.cell(i+1,j).value
-        print(i)
  
     i=i+1
     savi = i;

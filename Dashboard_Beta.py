@@ -72,17 +72,18 @@ def Act1(i):
                 L1.grid(row=0, column=3)
                 
                 for j in range(1, 7):
-                        L2=Label(frame2, text="Product Name")
-                        L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column'])
-                        L2e=Label(frame2, text=rsf.find_val('DR-june-18.xlsx','sheet_names(1)', 'OPENING BALANCE (MT)',  'S40000000066') + '+' + rsf.find_val('DR-june-18.xlsx','sheet_names(1)', 'OPENING BALANCE (MT)',  'S40000000066'))
-                        L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
-
-                        L2=Label(frame2, text="Product Name")
+                        L2=Label(frame2, text=dic.a[1])
                         L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column']))
-                        L2e=Label(frame2, text=rsf.find_val('DR-june-18.xlsx','sheet_names(1)', 'OPENING BALANCE (MT)',  'S40000000066'))
+                        L2e=Label(frame2, text=get_col('DR-june-18.xlsx', ref.sheet, 'SAP code')[i])
                         L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
+                        for q in range(1, 7):
+                            L2=Label(frame2, text="Product Name")
+                            L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column']))
+                            L2e=Label(frame2, text=rsf.find_val('DR-june-18.xlsx', ref.sheet, dic.a[j], get_col('DR-june-18.xlsx', ref.sheet, 'SAP code')[i]) ))
+                            L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
 
 
+#rsf.find_val('DR-june-18.xlsx','sheet_names(1)', 'OPENING BALANCE (MT)',  'S40000000066')
         #if i==1:
 
         #if i==2:

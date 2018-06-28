@@ -67,36 +67,21 @@ def Act1(i):
         frame2.grid()
 
         if i==0:
-                
+                       
                 L1=Label(frame2, text=buttonCP.cget('text'))
                 L1.grid(row=0, column=3)
-         
+                
+                for j in range(1, 7):
+                        L2=Label(frame2, text="Product Name")
+                        L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column'])
+                        L2e=Label(frame2, text=rsf.find_val('DR-june-18.xlsx','sheet_names(1)', 'OPENING BALANCE (MT)',  'S40000000066') + '+' + rsf.find_val('DR-june-18.xlsx','sheet_names(1)', 'OPENING BALANCE (MT)',  'S40000000066'))
+                        L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
 
-                L2=Label(frame2, text="Opening Stock")
-                L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column']))
-                L2e=Label(frame2, text=rsf.find_val('data_sheet.xlsx','Sheet3', str(i.cget('text')), 'OP stock'))
-                L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
+                        L2=Label(frame2, text="Product Name")
+                        L2.grid(row=int(L1.grid_info()['row'])+ 2  , column=int(L1.grid_info()['column']))
+                        L2e=Label(frame2, text=rsf.find_val('DR-june-18.xlsx','sheet_names(1)', 'OPENING BALANCE (MT)',  'S40000000066'))
+                        L2e.grid(row=int(L1.grid_info()['row'])+ 3  , column=int(L1.grid_info()['column']))
 
-              
-
-                L3=Label(frame2,text="Today")
-                L3.grid(row=int(L1.grid_info()['row'])+ 4  , column=int(L1.grid_info()['column']) - 2)
-                L3e=Label(frame2, text=rsf.find_val('data_sheet.xlsx','Sheet3', str(i.cget('text')), 'Production', 'today'))
-                L3e.grid(row=int(L1.grid_info()['row'])+ 5  , column=int(L1.grid_info()['column']) -2)
-
-
-                L4=Label(frame2, text="To Month")
-                L4.grid(row=int(L1.grid_info()['row'])+ 4  , column=int(L1.grid_info()['column']))
-                L4e=Label(frame2, text = str(rsf.find_val('data_sheet.xlsx','Sheet3', str(i.cget('text')), 'Production', 'to month')) + \
-                          '/' + \
-                          str(rsf.find_val('data_sheet.xlsx','Sheet3', str(i.cget('text')), 'Dispatch/Sales', 'to month')))
-                L4e.grid(row=int(L1.grid_info()['row'])+ 5 , column=int(L1.grid_info()['column']))
-
-         
-                L5=Label(frame2, text="To Date")
-                L5.grid(row=int(L1.grid_info()['row'])+ 4  , column=int(L1.grid_info()['column']) +2)
-                L5e=Label(frame2, text=rsf.find_val('data_sheet.xlsx','Sheet3', str(i.cget('text')), 'Production', 'to date'))
-                L5e.grid(row=int(L1.grid_info()['row'])+ 5 , column=int(L1.grid_info()['column']) + 2)
 
         #if i==1:
 
@@ -123,21 +108,21 @@ ttk.Separator(frame, orient = HORIZONTAL).grid(row=1, columnspan = 5 , sticky ="
 buttonCP=Button(frame, text="Chlorinated Paraffin", bg="red", fg="white", width=25)
 buttonCP.grid(rowspan=2, column=0)
 info = buttonCP.grid_info()
-buttonCP.configure(command= lambda k=buttonCP: Act1(info["column"]))
+buttonCP.configure(command= lambda k=buttonCP: Act1(int(info["column"])))
 
 
 
 buttonPAC=Button(frame, text="Poly-Alluminum Chloride", bg="red", fg="white", width=25)
 buttonPAC.grid(row=2, column=int(info["column"])+1)
-buttonPAC.configure(command= lambda k=buttonPAC: Act1(info["column"])+1)
+buttonPAC.configure(command= lambda k=buttonPAC: Act1(int(info["column"]))+1)
 
 buttonSBP=Button(frame, text="Stable Bleaching Powder", bg="red", fg="white", width=25)
 buttonSBP.grid(row=2, column=int(info["column"])+2)
-buttonSBP.configure(command= lambda k=buttonSBP: Act1(info["column"])+2)
+buttonSBP.configure(command= lambda k=buttonSBP: Act1(int(info["column"]))+2)
 
 buttonALCP=Button(frame, text="Anhydrous Alluminium Chloride", bg="red", fg="white", width=25)
 buttonALCP.grid(row=2, column=int(info["column"])+3)
-buttonALCP.configure(command= lambda k=buttonALCP: Act1(info["column"])+3)
+buttonALCP.configure(command= lambda k=buttonALCP: Act1(int(info["column"])+3))
         
 
 """#### Prod BUTTONS

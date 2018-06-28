@@ -24,9 +24,6 @@ worksheet = workbook.sheet_by_name(sheet)
 
 xxx = rsf.get_col(file,sheet,'Off spec material')
 
-print(xxx)
-
-print(xxx[3])
 ##print(rowval)
 ##  (correctness_ratio = fuzz.ratio(, "xx")
 ##x

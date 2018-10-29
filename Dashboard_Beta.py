@@ -112,8 +112,6 @@ buttonCP.grid(rowspan=2, column=0)
 info = buttonCP.grid_info()
 buttonCP.configure(command= lambda k=buttonCP: Act1(int(info["column"])))
 
-
-
 buttonPAC=Button(frame, text="Poly-Alluminum Chloride", bg="red", fg="white", width=25)
 buttonPAC.grid(row=2, column=int(info["column"])+1)
 buttonPAC.configure(command= lambda k=buttonPAC: Act1(int(info["column"]))+1)
